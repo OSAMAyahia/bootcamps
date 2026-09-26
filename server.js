@@ -68,7 +68,7 @@ http.createServer((req, res) => {
   const host = req.headers.host || `localhost:${PORT}`;
   const isRsc = url.searchParams.has("_rsc") || req.headers.rsc === "1";
 
-  if (p === "/_next/image") {
+  if (p === "/next-assets/image") {
     const file = resolveAsset(url.searchParams.get("url") || "");
     return file ? sendFile(req, res, file, host) : notFound(res);
   }
