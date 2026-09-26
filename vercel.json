@@ -1,20 +1,39 @@
 {
   "redirects": [
-    { "source": "/", "destination": "/bootcamps/cybersecurity", "permanent": false },
     {
-      "source": "/((?!next-assets/|cdn/|cdn-cgi/|brand/|logos/|img/|icons/|media/|api/|bootcamps/cybersecurity$|index\.html$|empty\.json$).*)",
+      "source": "/",
+      "destination": "/bootcamps/cybersecurity",
+      "permanent": false
+    },
+    {
+      "source": "/((?!next-assets/|cdn/|cdn-cgi/|brand/|logos/|img/|icons/|media/|api/|bootcamps/cybersecurity$|index\\.html$|empty\\.json$).*)",
       "destination": "/bootcamps/cybersecurity",
       "permanent": false
     }
   ],
   "rewrites": [
-    { "source": "/bootcamps/cybersecurity", "destination": "/index.html" },
+    {
+      "source": "/bootcamps/cybersecurity",
+      "destination": "/index.html"
+    },
     {
       "source": "/next-assets/image",
-      "has": [{ "type": "query", "key": "url", "value": "/(?<p>.*)" }],
+      "has": [
+        {
+          "type": "query",
+          "key": "url",
+          "value": "/(?<p>.*)"
+        }
+      ],
       "destination": "/:p"
     },
-    { "source": "/media/:path*", "destination": "/cdn/:path*" },
-    { "source": "/api/:path*", "destination": "/empty.json" }
+    {
+      "source": "/media/:path*",
+      "destination": "/cdn/:path*"
+    },
+    {
+      "source": "/api/:path*",
+      "destination": "/empty.json"
+    }
   ]
 }
