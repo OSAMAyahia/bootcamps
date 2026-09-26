@@ -1,0 +1,1 @@
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,82432,t=>{"use strict";t.s(["page",0,{meta:{title:"التحقق من الشهادات | كودد الكويت",description:"تحقق من صحة شهادة صادرة عن كودد عبر إدخال رمز الشهادة الموجود على الوثيقة."},blocks:[]}])}]);

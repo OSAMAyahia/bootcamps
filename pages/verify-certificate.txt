@@ -1,0 +1,9 @@
+Verify Certificate
+==================
+
+Section: About
+Original URL: https://coded.kw/verify-certificate
+
+Check a CODED credential.
+
+(Placeholder — this page was intentionally not cloned. Only /bootcamps/cybersecurity is fully mirrored.)

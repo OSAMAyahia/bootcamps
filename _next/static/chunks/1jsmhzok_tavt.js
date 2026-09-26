@@ -1,0 +1,1 @@
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,83212,t=>{"use strict";t.s(["page",0,{meta:{title:"Verify Certificate | CODED",description:"Verify the authenticity of a CODED certificate."},blocks:[]}])}]);
