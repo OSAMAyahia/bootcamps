@@ -12,10 +12,10 @@
 .agentic-headings > section:nth-of-type(6) { order: 5; } /* trusted by learners, right after curriculum */
 .agentic-headings > section:nth-of-type(5) { order: 6; }
 .agentic-headings > section:nth-of-type(7) { order: 7; }
-.agentic-headings > section:nth-of-type(8) { order: 8; }
-.agentic-headings > section:nth-of-type(n+9) { order: 9; }
-/* "Trusted By 50+ Companies" strip from the home page, last before the footer */
-.agentic-headings > #cx-client-logos { order: 99; position: relative; z-index: 20; }
+.agentic-headings > section:nth-of-type(8) { order: 9; } /* FAQ */
+.agentic-headings > section:nth-of-type(n+9) { order: 10; }
+/* "Trusted By 50+ Companies" strip from the home page, right before the FAQ */
+.agentic-headings > #cx-client-logos { order: 8; position: relative; z-index: 20; }
 
 /* ---------- Overview removed; only the "See what you will get" video stays ---------- */
 .agentic-headings > section:nth-of-type(3) > div > div:first-child { display: none; }
