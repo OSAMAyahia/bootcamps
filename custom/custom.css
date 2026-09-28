@@ -64,24 +64,32 @@ a.coded-btn-host > span.flex-col::before {
   content: "Get Your Free Consultation";
   display: inline-flex;
   align-items: center;
-  padding: 9px 16px;
+  padding: 10px 24px;
   border-radius: 9999px;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  font-size: 13px;
+  background: #f72961;
+  color: #091c29;
+  font-size: 15px;
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1.5;
   white-space: nowrap;
-  transition: background-color 0.25s ease, border-color 0.25s ease;
+  transition: background-color 0.25s ease;
 }
-a.coded-btn-host:hover > span.flex-col::before { background: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.7); }
+a.coded-btn-host:hover > span.flex-col::before { background: #ff4a7d; }
 a.coded-btn-host { padding-left: 10px !important; }
 a.coded-btn-host > .coded-btn { white-space: nowrap; }
-@media (max-width: 380px) {
-  a.coded-btn-host > span.flex-col::before { font-size: 12px; padding: 8px 12px; }
-  a.coded-btn-host > .coded-btn { padding-left: 16px; padding-right: 16px; }
+@media (max-width: 480px) {
+  a.coded-btn-host { gap: 8px !important; }
+  a.coded-btn-host > span[aria-hidden="true"] { display: none; } /* divider */
+  a.coded-btn-host > span.flex-col::before,
+  a.coded-btn-host > .coded-btn { font-size: 13px !important; padding: 9px 14px !important; }
 }
-@media (min-width: 640px) {
-  a.coded-btn-host > span.flex-col::before { font-size: 15px; padding: 10px 22px; }
+
+/* ---------- Kickoff card: "Get Your Free Consultation" next to Apply Now ---------- */
+.cx-consult { margin-left: auto; white-space: nowrap; }
+.cx-consult + a { white-space: nowrap; }
+@media (max-width: 480px) {
+  .cx-consult, .cx-consult + a { padding-left: 16px !important; padding-right: 16px !important; font-size: 14px !important; }
+  .cx-consult { margin-left: 0; }
 }
 
 /* ---------- "See what you will get" caption above the video, arrow pointing down at it ---------- */
@@ -124,7 +132,9 @@ a.coded-btn-host > .coded-btn { white-space: nowrap; }
 .cx-modal__eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #2d4bfd; }
 .cx-modal__title { margin-top: 8px; font-size: 26px; line-height: 1.15; text-transform: uppercase; font-family: var(--font-gotham-ultra, inherit); }
 .cx-modal__sub { margin-top: 8px; font-size: 15px; line-height: 1.6; color: #14243fa6; }
-.cx-modal form { margin-top: 22px; display: grid; gap: 14px; }
+.cx-modal form { margin-top: 22px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; }
+.cx-modal *, .cx-modal *::before, .cx-modal *::after { box-sizing: border-box; }
+.cx-field { min-width: 0; }
 .cx-field label { display: block; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #14243fb3; margin-bottom: 6px; }
 .cx-input, .cx-phone { width: 100%; height: 50px; border-radius: 12px; border: 1px solid #14243f26; background: #fff; font: inherit;
   font-size: 16px; color: #14243f; transition: border-color 0.2s, box-shadow 0.2s; }
@@ -134,7 +144,14 @@ a.coded-btn-host > .coded-btn { white-space: nowrap; }
 .cx-phone select { border: 0; background: #14243f08; padding: 0 10px 0 14px; font: inherit; font-size: 15px; color: #14243f; cursor: pointer; outline: none; }
 .cx-phone input { flex: 1; min-width: 0; border: 0; padding: 0 14px; font: inherit; font-size: 16px; color: #14243f; outline: none; background: transparent; }
 .cx-error { min-height: 18px; font-size: 13px; color: #e0284f; }
-.cx-submit { width: 100%; height: 52px; gap: 8px; font-size: 16px !important; }
+.cx-submit { width: 100% !important; max-width: 100%; height: 52px; gap: 8px; font-size: 16px !important; }
+@media (max-width: 480px) {
+  .cx-modal { padding: 14px; align-items: center; }
+  .cx-modal__card { padding: 26px 20px 20px; max-height: calc(100dvh - 28px); overflow-y: auto; }
+  .cx-modal__title { font-size: 22px; padding-right: 36px; }
+  .cx-modal__sub { font-size: 14px; }
+  .cx-phone select { padding: 0 6px 0 10px; font-size: 14px; }
+}
 .cx-submit[disabled] { opacity: 0.7; cursor: default; }
 .cx-submit svg { width: 18px; height: 18px; }
 .cx-modal__note { margin-top: 12px; font-size: 12.5px; text-align: center; color: #14243f80; }

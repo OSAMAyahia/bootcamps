@@ -124,6 +124,19 @@
     head.querySelector(":scope > h2").insertAdjacentElement("afterend", a);
   }
 
+  // "Get Your Free Consultation" beside Apply Now in the Next Kickoff card, styled from Apply Now itself.
+  function addConsultButton() {
+    var apply = document.querySelector(".agentic-headings > section:nth-of-type(2) .grid > div:nth-of-type(1) a.coded-btn:not(.cx-consult)");
+    if (!apply || (apply.previousElementSibling && apply.previousElementSibling.classList.contains("cx-consult"))) return;
+    var a = document.createElement("a");
+    a.href = apply.getAttribute("href");
+    if (apply.target) { a.target = apply.target; a.rel = apply.rel; }
+    a.className = apply.className + " cx-consult";
+    a.style.cssText = "--btn-bg:#f72961;--btn-bg-hover:#ff4a7d;--btn-fg:#091c29;--btn-fg-hover:#091c29";
+    a.textContent = "Get Your Free Consultation";
+    apply.insertAdjacentElement("beforebegin", a);
+  }
+
   function relabelApplyBar() {
     document.querySelectorAll("a.coded-btn-host").forEach(function (a) {
       var label = "Get Your Free Consultation — Apply Now";
@@ -133,6 +146,7 @@
 
   function apply() {
     addDownloadButton();
+    addConsultButton();
     relabelApplyBar();
   }
 
