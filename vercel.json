@@ -6,7 +6,7 @@
       "permanent": false
     },
     {
-      "source": "/((?!next-assets/|cdn/|cdn-cgi/|brand/|logos/|img/|icons/|media/|api/|bootcamps/cybersecurity$|index\\.html$|empty\\.json$).*)",
+      "source": "/((?!next-assets/|custom/|opt/|cdn/|cdn-cgi/|brand/|logos/|img/|icons/|media/|api/|bootcamps/cybersecurity$|index\\.html$|empty\\.json$).*)",
       "destination": "/bootcamps/cybersecurity",
       "permanent": false
     }

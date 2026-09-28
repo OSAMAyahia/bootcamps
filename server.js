@@ -15,7 +15,7 @@ const TYPES = {
   ".css": "text/css; charset=utf-8", ".json": "application/json", ".txt": "text/plain; charset=utf-8",
   ".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".svg": "image/svg+xml",
   ".webp": "image/webp", ".gif": "image/gif", ".ico": "image/x-icon", ".woff2": "font/woff2",
-  ".woff": "font/woff", ".mp4": "video/mp4", ".webm": "video/webm", ".glb": "model/gltf-binary",
+  ".woff": "font/woff", ".mp4": "video/mp4", ".webm": "video/webm", ".glb": "model/gltf-binary", ".pdf": "application/pdf",
 };
 const COMPRESSIBLE = new Set([".html", ".js", ".mjs", ".css", ".json", ".svg", ".txt", ".glb"]);
 // Hashed build output and media never change, so browsers may cache them for good.

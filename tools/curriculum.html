@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cybersecurity Bootcamp — Curriculum | CODED</title>
+<style>
+  @font-face { font-family: "Gotham Ultra"; src: url("../next-assets/static/media/gotham_ultra-s.p.1bgkx2ku2v1e_.woff2") format("woff2"); }
+  @font-face { font-family: "Coded Type"; font-weight: 400; src: url("../next-assets/static/media/coded_type_regular-s.2i5awa8fa8kya.woff2") format("woff2"); }
+  @font-face { font-family: "Coded Type"; font-weight: 600; src: url("../next-assets/static/media/coded_type_semibold-s.40gct7pizv30h.woff2") format("woff2"); }
+  @font-face { font-family: "Coded Type"; font-weight: 700; src: url("../next-assets/static/media/coded_type_bold-s.18_o1exy8_dra.woff2") format("woff2"); }
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Coded Type", Arial, sans-serif; color: #14243f; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .cover { background: #14243f; color: #fff; padding: 44px 48px 40px; position: relative; overflow: hidden; }
+  .cover::after { content: ""; position: absolute; right: -90px; top: -90px; width: 300px; height: 300px; border-radius: 50%; background: #2d4bfd; opacity: .35; }
+  .cover::before { content: ""; position: absolute; right: 40px; top: 60px; width: 160px; height: 160px; border-radius: 50%; background: #f72961; opacity: .25; }
+  .brand { display: flex; align-items: center; gap: 14px; position: relative; z-index: 1; }
+  .brand img { height: 26px; filter: brightness(0) invert(1); }
+  .eyebrow { font-size: 11px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; opacity: .6; margin-top: 34px; position: relative; z-index: 1; }
+  h1 { font-family: "Gotham Ultra", Arial, sans-serif; font-size: 40px; line-height: 1.05; text-transform: uppercase; margin-top: 10px; position: relative; z-index: 1; }
+  h1 span { background: #2d4bfd; padding: 0 8px; }
+  .lead { max-width: 30em; font-size: 13.5px; line-height: 1.6; opacity: .8; margin-top: 16px; position: relative; z-index: 1; }
+  .specs { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: #ffffff26; border-radius: 12px; overflow: hidden; margin-top: 28px; position: relative; z-index: 1; }
+  .specs div { background: #1b2e4f; padding: 12px 14px; }
+  .specs dt { font-size: 9px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; opacity: .55; }
+  .specs dd { font-size: 12px; font-weight: 600; margin-top: 4px; }
+  main { padding: 30px 48px 20px; }
+  .module { border: 1px solid #14243f1f; border-radius: 14px; padding: 20px 24px; margin-bottom: 16px; page-break-inside: avoid; }
+  .module header { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
+  .tag { font-size: 10px; font-weight: 700; letter-spacing: .2em; color: #2d4bfd; text-transform: uppercase; }
+  .dur { font-size: 11px; font-weight: 600; background: #14243f; color: #fff; border-radius: 999px; padding: 4px 10px; white-space: nowrap; }
+  h2 { font-size: 18px; font-weight: 700; margin-top: 4px; display: flex; align-items: center; gap: 8px; }
+  h2::before { content: ""; width: 7px; height: 7px; background: #2d4bfd; flex: none; }
+  .module p { font-size: 11.5px; line-height: 1.6; color: #14243fcc; margin-top: 10px; }
+  .skills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+  .skills span { font-size: 10.5px; font-weight: 600; border-radius: 999px; padding: 4px 10px; background: #2d4bfd14; color: #14243f; }
+  footer { margin: 4px 48px 0; padding-top: 14px; border-top: 1px solid #14243f1f; display: flex; justify-content: space-between; font-size: 10.5px; color: #14243f99; }
+</style>
+</head>
+<body>
+  <section class="cover">
+    <div class="brand"><img src="../brand/coded-wordmark-navy.png" alt="CODED"></div>
+    <p class="eyebrow">Curriculum · Cohort Oct – Dec 2026</p>
+    <h1><span>Cybersecurity</span><br>Bootcamp</h1>
+    <p class="lead">Your journey from beginner to cybersecurity specialist. Over the course of this bootcamp, you will evolve into a professional capable of identifying vulnerabilities, defending systems, and protecting digital environments from real-world threats.</p>
+    <dl class="specs">
+      <div><dt>Duration</dt><dd>10 weeks</dd></div>
+      <div><dt>Level</dt><dd>Beginner–Friendly</dd></div>
+      <div><dt>Language</dt><dd>English (Arabic support)</dd></div>
+      <div><dt>Format</dt><dd>In-Person, Kuwait</dd></div>
+      <div><dt>Schedule</dt><dd>Evenings (Sun–Wed)</dd></div>
+    </dl>
+  </section>
+
+  <main>
+    <article class="module">
+      <header><div><p class="tag">Module 1 · 01/03</p><h2>Cybersecurity Foundations</h2></div><span class="dur">2 Weeks</span></header>
+      <p>This module builds a validated technical baseline by treating every topic as a cyber battlefield concept. Trainees operate from both attacker and defender perspectives from Day 1, moving through the full anatomy of a cyber attack, the Cyber Kill Chain, and the Incident Response lifecycle. They develop hands-on fluency across Windows log analysis, Kali Linux CLI, networking and traffic analysis with Wireshark, and web request manipulation with Burp Suite. The module then pushes into offensive territory — exploiting core web vulnerabilities including SQLi, XSS, command injection, and IDOR — while also covering AI prompt injection awareness, cryptography, and password cracking. Trainees must pass a Foundations Mini CTF to advance.</p>
+      <div class="skills"><span>Cyber Kill Chain &amp; Incident Response</span><span>CLI Fluency (Kali Linux)</span><span>Network Traffic Analysis</span><span>Web Exploitation Basics</span><span>Cryptography Fundamentals</span></div>
+    </article>
+
+    <article class="module">
+      <header><div><p class="tag">Module 2 · 02/03</p><h2>Offensive Security: Ethical Hacking &amp; Pentesting</h2></div><span class="dur">5 Weeks</span></header>
+      <p>This phase builds structured Red Team capabilities, enabling trainees to simulate real-world offensive security operations end to end. Trainees conduct professional OSINT and active reconnaissance, exploit web applications through progressive custom labs, escalate privileges across Linux and Windows systems, execute complete Active Directory attack chains, and perform lateral movement and persistence. The phase also covers hybrid cloud offensive operations and AI-assisted reconnaissance, analysis, and reporting. It culminates in a hybrid enterprise Red Team simulation where trainees deliver a professional penetration testing report with a full attack narrative, structured findings, and clear risk prioritization.</p>
+      <div class="skills"><span>OSINT &amp; Reconnaissance</span><span>Web Application Exploitation</span><span>Privilege Escalation</span><span>Active Directory Attacks</span><span>Pentest Report Writing</span></div>
+    </article>
+
+    <article class="module">
+      <header><div><p class="tag">Module 3 · 03/03</p><h2>Defensive Security: Blue Team Operations</h2></div><span class="dur">3 Weeks</span></header>
+      <p>This phase develops operational Blue Team capabilities, equipping trainees to function effectively within real-world security operations environments. Trainees operate within SOC workflows, triage alerts efficiently, investigate phishing campaigns, write and tune detection rules, and execute the full Incident Response lifecycle. They also conduct Windows, Linux, and network forensics, perform memory analysis, triage malware, run hypothesis-driven threat hunts, detect Active Directory abuse, and investigate hybrid cloud compromise — with AI integrated throughout. The phase culminates in a full hybrid Blue Team simulation, delivering a comprehensive incident response report with timeline reconstruction, root cause analysis, and detection improvement recommendations.</p>
+      <div class="skills"><span>SOC Workflow &amp; Alert Triage</span><span>Log Analysis &amp; Detection Engineering</span><span>Digital Forensics (DFIR)</span><span>Threat Hunting</span><span>Incident Response Reporting</span></div>
+    </article>
+  </main>
+
+  <footer><span>CODED · Kuwait Free Trade Zone</span><span>+965 6079 1018 · hello@joincoded.com</span></footer>
+</body>
+</html>
