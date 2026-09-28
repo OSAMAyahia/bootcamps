@@ -19,8 +19,8 @@
 .agentic-headings > section:nth-of-type(3) > div > div:first-child { display: none; }
 .agentic-headings > section:nth-of-type(3) > div > div:nth-child(2) { margin-top: 0; }
 /* the next section brings its own top padding; keep just enough room for the
-   "See what you will get" caption, which hangs below the video (the section clips overflow) */
-.agentic-headings > section:nth-of-type(3) { padding-bottom: 110px; }
+   decorative circles around the video (the section clips overflow) */
+.agentic-headings > section:nth-of-type(3) { padding-bottom: 90px; }
 
 /* ---------- Kickoff card + "Applications close in" joined into one card ---------- */
 .agentic-headings > section:nth-of-type(2) .grid > div:nth-of-type(2) > div:first-child { display: none; } /* price */
@@ -58,22 +58,40 @@
   }
 }
 
-/* ---------- Sticky apply bar: "Next cohort · date" -> "Get Your Free Consultation" ---------- */
+/* ---------- Sticky apply bar: "Next cohort · date" -> a "Get Your Free Consultation" button ---------- */
 a.coded-btn-host > span.flex-col > span { display: none; }
 a.coded-btn-host > span.flex-col::before {
   content: "Get Your Free Consultation";
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 16px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
   font-size: 13px;
   font-weight: 600;
+  line-height: 1.2;
   white-space: nowrap;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
 }
+a.coded-btn-host:hover > span.flex-col::before { background: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.7); }
+a.coded-btn-host { padding-left: 10px !important; }
 a.coded-btn-host > .coded-btn { white-space: nowrap; }
 @media (max-width: 380px) {
-  a.coded-btn-host > span.flex-col::before { font-size: 12px; }
+  a.coded-btn-host > span.flex-col::before { font-size: 12px; padding: 8px 12px; }
   a.coded-btn-host > .coded-btn { padding-left: 16px; padding-right: 16px; }
 }
 @media (min-width: 640px) {
-  a.coded-btn-host > span.flex-col::before { font-size: 15.5px; }
+  a.coded-btn-host > span.flex-col::before { font-size: 15px; padding: 10px 22px; }
 }
+
+/* ---------- "See what you will get" caption above the video, arrow pointing down at it ---------- */
+.agentic-headings > section:nth-of-type(3) div.relative > div[aria-hidden="true"].absolute {
+  top: auto !important;
+  bottom: calc(100% + 14px);
+  align-items: flex-start;
+}
+.agentic-headings > section:nth-of-type(3) div.relative > div[aria-hidden="true"].absolute > svg { transform: scaleY(-1); }
+.agentic-headings > section:nth-of-type(3) div.relative > div[aria-hidden="true"].absolute > span { margin-top: 18px; }
 
 /* ---------- Curriculum: heading row with "Download Curriculum" on the right ---------- */
 .agentic-headings > section:nth-of-type(4) > div:has(> .cx-download) {
@@ -90,3 +108,39 @@ a.coded-btn-host > .coded-btn { white-space: nowrap; }
   .cx-download { grid-column: 1 / -1 !important; grid-row: 2; justify-self: start; margin-top: 16px; padding: 9px 18px !important; font-size: 14px !important; }
   .cx-download svg { width: 16px; height: 16px; }
 }
+
+/* ---------- "Download Curriculum" lead popup ---------- */
+.cx-modal { position: fixed; inset: 0; z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 20px;
+  background: rgba(10, 18, 34, 0.55); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; }
+.cx-modal.is-open { opacity: 1; visibility: visible; }
+.cx-modal__card { position: relative; width: 100%; max-width: 440px; background: #fff; color: #14243f; border-radius: 20px;
+  padding: 32px 28px 28px; box-shadow: 0 30px 80px -20px rgba(10, 18, 34, 0.45);
+  transform: translateY(16px) scale(0.98); transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1); }
+.cx-modal.is-open .cx-modal__card { transform: none; }
+.cx-modal__close { position: absolute; top: 14px; right: 14px; width: 36px; height: 36px; border-radius: 9999px; border: 0;
+  background: #14243f0d; color: #14243f; font-size: 22px; line-height: 1; cursor: pointer; transition: background 0.2s; }
+.cx-modal__close:hover { background: #14243f1f; }
+.cx-modal__eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #2d4bfd; }
+.cx-modal__title { margin-top: 8px; font-size: 26px; line-height: 1.15; text-transform: uppercase; font-family: var(--font-gotham-ultra, inherit); }
+.cx-modal__sub { margin-top: 8px; font-size: 15px; line-height: 1.6; color: #14243fa6; }
+.cx-modal form { margin-top: 22px; display: grid; gap: 14px; }
+.cx-field label { display: block; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #14243fb3; margin-bottom: 6px; }
+.cx-input, .cx-phone { width: 100%; height: 50px; border-radius: 12px; border: 1px solid #14243f26; background: #fff; font: inherit;
+  font-size: 16px; color: #14243f; transition: border-color 0.2s, box-shadow 0.2s; }
+.cx-input { padding: 0 16px; }
+.cx-input:focus, .cx-phone:focus-within { outline: none; border-color: #2d4bfd; box-shadow: 0 0 0 4px #2d4bfd1f; }
+.cx-phone { display: flex; align-items: stretch; overflow: hidden; }
+.cx-phone select { border: 0; background: #14243f08; padding: 0 10px 0 14px; font: inherit; font-size: 15px; color: #14243f; cursor: pointer; outline: none; }
+.cx-phone input { flex: 1; min-width: 0; border: 0; padding: 0 14px; font: inherit; font-size: 16px; color: #14243f; outline: none; background: transparent; }
+.cx-error { min-height: 18px; font-size: 13px; color: #e0284f; }
+.cx-submit { width: 100%; height: 52px; gap: 8px; font-size: 16px !important; }
+.cx-submit[disabled] { opacity: 0.7; cursor: default; }
+.cx-submit svg { width: 18px; height: 18px; }
+.cx-modal__note { margin-top: 12px; font-size: 12.5px; text-align: center; color: #14243f80; }
+.cx-modal__done { display: none; text-align: center; padding: 8px 0 4px; }
+.cx-modal.is-done form, .cx-modal.is-done .cx-modal__sub, .cx-modal.is-done .cx-modal__note { display: none; }
+.cx-modal.is-done .cx-modal__done { display: block; }
+.cx-modal__done svg { width: 54px; height: 54px; color: #2d4bfd; margin: 18px auto 10px; display: block; }
+.cx-modal__done p { font-size: 15px; line-height: 1.6; color: #14243fb3; }
+.cx-modal__done a { color: #2d4bfd; font-weight: 600; }
