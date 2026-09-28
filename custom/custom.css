@@ -14,6 +14,8 @@
 .agentic-headings > section:nth-of-type(7) { order: 7; }
 .agentic-headings > section:nth-of-type(8) { order: 8; }
 .agentic-headings > section:nth-of-type(n+9) { order: 9; }
+/* "Trusted By 50+ Companies" strip from the home page, last before the footer */
+.agentic-headings > #cx-client-logos { order: 99; position: relative; z-index: 20; }
 
 /* ---------- Overview removed; only the "See what you will get" video stays ---------- */
 .agentic-headings > section:nth-of-type(3) > div > div:first-child { display: none; }

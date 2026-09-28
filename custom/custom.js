@@ -137,6 +137,60 @@
     apply.insertAdjacentElement("beforebegin", a);
   }
 
+  // "Trusted By 50+ Companies in Kuwait" logo strip from https://coded.kw/, placed after the FAQ.
+  var logosRequested = false;
+  function addClientLogos() {
+    var host = document.querySelector(".agentic-headings");
+    if (!host || logosRequested) return;
+    logosRequested = true;
+    fetch("/custom/trusted-companies.html")
+      .then(function (r) { return r.text(); })
+      .then(function (html) {
+        var tpl = document.createElement("template");
+        tpl.innerHTML = html.trim();
+        var section = tpl.content.firstElementChild;
+        host.appendChild(section);
+        startMarquee(section.querySelector(".flex.w-max"));
+      });
+  }
+
+  // Same motion as the original: drifts right at ~52px/s, loops over the duplicated logo set,
+  // and can be dragged with mouse or touch.
+  function startMarquee(track) {
+    if (!track) return;
+    var SPEED = 52; // px per second
+    var box = track.parentElement;
+    var x = 0, last = performance.now(), dragging = false, startX = 0, startOffset = 0;
+    var half = function () { return track.scrollWidth / 2; };
+    x = -half();
+    function wrap() {
+      var h = half();
+      if (h <= 0) return;
+      while (x > 0) x -= h;
+      while (x <= -h) x += h;
+    }
+    function frame(now) {
+      var dt = Math.min(0.1, (now - last) / 1000);
+      last = now;
+      if (!dragging) x += SPEED * dt;
+      wrap();
+      track.style.transform = "translateX(" + x.toFixed(2) + "px)";
+      requestAnimationFrame(frame);
+    }
+    box.addEventListener("pointerdown", function (e) {
+      dragging = true; startX = e.clientX; startOffset = x;
+      box.setPointerCapture(e.pointerId);
+    });
+    box.addEventListener("pointermove", function (e) {
+      if (dragging) { x = startOffset + (e.clientX - startX); wrap(); }
+    });
+    ["pointerup", "pointercancel", "lostpointercapture"].forEach(function (t) {
+      box.addEventListener(t, function () { dragging = false; });
+    });
+    box.addEventListener("dragstart", function (e) { e.preventDefault(); });
+    requestAnimationFrame(frame);
+  }
+
   function relabelApplyBar() {
     document.querySelectorAll("a.coded-btn-host").forEach(function (a) {
       var label = "Get Your Free Consultation — Apply Now";
@@ -147,6 +201,7 @@
   function apply() {
     addDownloadButton();
     addConsultButton();
+    addClientLogos();
     relabelApplyBar();
   }
 
